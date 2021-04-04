@@ -18,7 +18,7 @@ const MainChat = () => {
     return (
         <div style={{display: 'flex'}}>
             { showSideBar ? <Sidebar setShowSideBar={setShowSideBar} showSideBar={showSideBar} setCurrentChannel={setCurrentChannel} usersId={usersId} /> : null}
-            <div className="chat-box">
+            <div className="chat-box" style={{width: '75%'}}>
             <Chat currentChannel={currentChannel} setUsersId={setUsersId} />
             </div>
             <div className='menu-icon' onClick={() => { window.innerWidth <= 400 ? (setShowSideBar(!showSideBar)):(setShowSideBar(true))}}>

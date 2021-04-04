@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
 import { auth, db } from '../../../firebase';
 import { LogOut } from '../../../services/auth';
-import NoChatActive from './noChatActive';
+import CurrentChannel from './currentChannel/currentChannel';
+import NoChatActive from './noChatActive/noChatActive';
 const Chat = ({ currentChannel,setUsersId }) => {
     useEffect( async () => {
         console.log(currentChannel);
@@ -14,16 +15,18 @@ const Chat = ({ currentChannel,setUsersId }) => {
         }
     },[currentChannel])
     return (
-        <div>
-            <div onClick={() => { LogOut() }}>LogOut</div>
+        <>
+            {/* <div onClick={() => { LogOut() }}>LogOut</div> */}
             {
                 currentChannel ? (
-                    <div>{currentChannel}</div>
+                    <>
+                        <CurrentChannel channelId={currentChannel} />
+                    </>
                 ) : (
                     <NoChatActive />
                 )
             }
-        </div>
+        </>
     );
 }
 export default Chat;

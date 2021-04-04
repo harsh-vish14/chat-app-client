@@ -5,6 +5,7 @@ import uuid from 'react-uuid'
 import firebase from 'firebase'
 import './Sidebar.css'
 import socket from '../../../socket';
+import createTextIcon from '../../../helper/functions';
 function Sidebar({ setCurrentChannel, usersId }) {
 
     const [channels, setchannels] = useState([]);
@@ -117,14 +118,6 @@ function Sidebar({ setCurrentChannel, usersId }) {
             }
         })
     }
-    const createTextIcon = (string) => {
-        const words = string.trim().split(' ');
-        if (words.length > 1) {
-            return (words[0][0] + words[1][0])
-        } else {
-            return words[0][0]
-        }
-    };
     const SaveChannel = async () => {
         const id = uuid();
         const date = new Date();
@@ -263,7 +256,6 @@ function Sidebar({ setCurrentChannel, usersId }) {
                         <div>
                             <div className='side-bar-title'>
                                 <div className='title' style={{ marginLeft: window.innerWidth <= 400 ? '35px' : '0px' }}> Channels</div>
-                                {console.log(window.innerWidth)}
                                 <div className='add-icon' data-bs-toggle="modal" data-bs-target="#staticBackdrop"><IoMdAdd /></div>
                             </div>
                             {/* search bar */}
