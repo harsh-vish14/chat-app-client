@@ -1,0 +1,26 @@
+$font-color: #F2F2F2;
+.menu-icon{
+    color: $font-color;
+    font-size:20px;
+    position:absolute;
+    left:10px;
+    top: 10px;
+    height: 32px;
+    width: 32px;
+    background: #252329;
+    // display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius: 8px;
+    cursor: pointer;
+    display:none;
+    // z-index: -1;
+}
+@media only screen and (max-width: 400px){
+    .menu-icon{
+        display: flex;
+    }
+    .chat-box{
+        margin:0px 52px;
+    }
+}

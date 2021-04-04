@@ -1,0 +1,228 @@
+$background:#120F13;
+$font-color: #F2F2F2;
+
+:root{
+    --background: $background;
+    --font-color: $font-color;
+}
+
+.Chat-SideBar{
+    width:350px;
+    height:100vh;
+    background: $background;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    overflow-y: auto;
+    position:relative;
+    .join{
+        position: fixed;
+        bottom: 10px;
+        padding: 10px;
+        background-color:#0f9b78;
+        // width: 300px;
+        margin-left: 10px;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        color:$font-color;
+        // margin-left: 5%;
+        // margin-right: 5%;
+        border-radius: 8px;
+        cursor: pointer;
+        // position: relative;
+        &:hover{
+            background-color:#0c644e;
+        }
+    }
+    .channels-information{
+        text-align: center;
+        color:$font-color;
+        .channels-title{
+            font-size: 1.5625rem;
+            text-transform: uppercase;
+        }
+        .channels-description{
+            text-align: left;
+            margin-left: 10px;
+        }
+        .channels-date-and-time{
+            display: flex;
+            font-size:14px;
+            justify-content:space-between;
+            margin:0px 13px;
+            opacity: 0.5;
+        }
+    }
+}
+.back{
+    color:$font-color;
+    display: flex;
+    justify-content:flex-start;
+    align-items:center;
+    margin: 10px 20px;
+    cursor: pointer;
+}
+.user-info-label{
+    
+    display: flex;
+    color:$font-color;
+    justify-content:space-between;
+    align-items:center;
+    margin: 10px 22px;
+    border-radius: 5px;
+    cursor:default;
+    .user-name{
+        display: flex;
+        overflow: hidden;
+        height:25px;
+    }
+    .user-profile-image{
+        padding:10px;
+        img{
+            height:40px;
+            width:40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            background: #252329;
+        }
+    }
+    &:hover {
+        transition: 0.4s;
+        background: #252329;
+    }
+}
+.side-bar-title{
+    background: $background;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0px 13px;
+    height:59.49px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    color: $font-color;
+    // width: 100%;
+    .title{
+        font-size: 20px;
+        font-weight:600;
+    }
+    .add-icon{
+        cursor: pointer;
+        background: #252329;
+        height:32px;
+        width: 32px;
+        display: flex;
+        font-size: 20px;
+        justify-content:center;
+        align-items:center;
+        border-radius:8px;
+    }
+}
+.search-bar{
+    color:$font-color;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    height:48px;
+    width: 265.42px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(33, 85, 131);
+    padding:0px 20px;
+    background: #3C393F;
+    border-radius: 8px;
+    margin-top: 20px;
+    input{
+        font-size: 17.06px;
+        width:100%;
+        border: none;
+        outline: none;
+        height:70%;
+        margin: 10px;
+        background-color:transparent;
+        color:$font-color;
+        &::placeholder{
+            color:#f2f2f27c;
+        }
+    }
+}
+@media only screen and (max-width: 400px){
+    .side-bar-title{
+        padding-left: 45px;
+    }
+    .Chat-SideBar{
+        position: absolute;
+    }
+}
+.modal-content {
+    background-color: $background;
+    color:$font-color;
+    .form-floating{
+        margin: 20px;
+    }
+    .title{
+        text-transform: uppercase;
+        margin:20px 20px;
+        margin-bottom: -10px;
+    }
+    input,
+    textarea {
+        // background-color:transparent;
+        background: #3C393F;
+        border-radius: 8px;
+        border: none;
+        color:$font-color;
+        &:focus{
+            background: #3C393F;
+            border: none;
+            color:$font-color;
+            // background-color:transparent;
+        }
+    }
+    .buts{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 10px 20px;
+        .close{
+            background-color: transparent;
+            cursor: pointer;
+            margin: 0px 20px;
+            padding:10px 0px;
+        }
+        .save{
+            cursor: pointer;
+        }
+        div{
+            padding:10px 25px;
+            background-color: #2F80ED;
+            border-radius: 8px;
+        }
+    }
+}
+.channels{
+    color:$font-color;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:10px 25px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px;
+    .channels-icon{
+        height:42px;
+        width:42px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #252329;
+        border-radius: 5px;
+    }
+    transition: 0.4s;
+    &:hover{
+        transition: 0.4s;
+        background: #252329;
+    }
+}

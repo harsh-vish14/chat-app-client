@@ -1,0 +1,66 @@
+.register-google {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-google::after {
+  content: "G";
+  z-index: -2;
+  position: absolute;
+  left: -30px;
+  bottom: 0px;
+  font-size: 1000px;
+  font-weight: bold;
+  color: #4885ed;
+  opacity: 0.3;
+}
+
+.register-google .title {
+  font-size: 1.875rem;
+}
+
+.register-google .bth {
+  margin-top: 30px;
+  cursor: pointer;
+  background-color: #4885ed;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.register-google .bth::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #4884ed73;
+  top: 5px;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  left: 5px;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.register-google .bth:focus:after {
+  opacity: 0;
+}
+/*# sourceMappingURL=register.css.map */
