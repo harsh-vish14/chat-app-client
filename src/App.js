@@ -9,8 +9,6 @@ function App() {
   useEffect(() => {
     auth.onAuthStateChanged((userInfo) => {
       if (userInfo) {
-        // console.log(userInfo);
-        // socket.emit('user-connected', userInfo );
         setUserLogin(true);
       }
     })

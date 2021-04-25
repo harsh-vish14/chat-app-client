@@ -9,12 +9,12 @@ $font-color: #F2F2F2;
     overflow: hidden;
     position: relative;
     .chat-channel-input{
-        background-color:#120F13;
-        padding: 13px 5px;
-        display:flex;
+        background-color: #120F13;
+        padding: 10px 30px;
+        display: flex;
         justify-content: center;
         position: absolute;
-        bottom:0px;
+        bottom: 0px;
         width: 100%;
         input{
             border: none;
@@ -46,12 +46,15 @@ $font-color: #F2F2F2;
     }
 }
 .chat-channel-header{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color:#120F13;
-    padding: 10px 5px;
-    color: $font-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #120F13;
+        padding: 10px 5px;
+        color: #F2F2F2;
+        position: absolute;
+        top: 0px;
+        width: 100%;
     .chat-channel-header-icon{
         // background-color: blue;
         height: 32px;
@@ -62,5 +65,54 @@ $font-color: #F2F2F2;
         justify-content: center;
         align-items: center;
         border-radius: 8px;
+    }
+}
+.chats{
+    // height: 111px;
+       /* display: flex; */
+       /* flex-direction: column; */
+       /* justify-content: flex-end; */
+       /* z-index: -1; */
+       /* height: fit-content; */
+       
+       height: calc(100vh - 111px);
+       margin-top: 55px;
+       /* padding-bottom: 75px; */
+       overflow-y: scroll;
+}
+.chat-details{
+    background-color: #6f6f6f;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    width:min-content;
+    max-width: 50vw;
+    position: relative;
+    min-width: 200px;
+    border-radius: 8px;
+    .chat-title{
+        word-wrap: break-word;
+        margin-bottom: 15px;
+        // margin-top:15px;
+        margin-left: 15px;
+    }
+    .chat-time {
+        position:absolute;
+            font-size: 11px;
+            margin-left: 20px;
+            opacity: 0.7;
+            bottom:5px;
+            right: 10px;
+    }
+    position:relative;
+}
+
+.chat-user{
+    // position:absolute;
+    display: flex;
+    top: 0px;
+    left: -9px;
+    .chat-user-name{
+        font-size:10px;
     }
 }

@@ -9,7 +9,7 @@
 
 .chat-channel .chat-channel-input {
   background-color: #120F13;
-  padding: 13px 5px;
+  padding: 10px 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -74,6 +74,9 @@
   background-color: #120F13;
   padding: 10px 5px;
   color: #F2F2F2;
+  position: absolute;
+  top: 0px;
+  width: 100%;
 }
 
 .chat-channel-header .chat-channel-header-icon {
@@ -91,5 +94,59 @@
       -ms-flex-align: center;
           align-items: center;
   border-radius: 8px;
+}
+
+.chats {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: flex-end; */
+  /* z-index: -1; */
+  /* height: fit-content; */
+  height: calc(100vh - 111px);
+  margin-top: 55px;
+  /* padding-bottom: 75px; */
+  overflow-y: scroll;
+}
+
+.chat-details {
+  background-color: #6f6f6f;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  max-width: 50vw;
+  position: relative;
+  min-width: 200px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.chat-details .chat-title {
+  word-wrap: break-word;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+.chat-details .chat-time {
+  position: absolute;
+  font-size: 11px;
+  margin-left: 20px;
+  opacity: 0.7;
+  bottom: 5px;
+  right: 10px;
+}
+
+.chat-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0px;
+  left: -9px;
+}
+
+.chat-user .chat-user-name {
+  font-size: 10px;
 }
 /*# sourceMappingURL=currentChannel.css.map */

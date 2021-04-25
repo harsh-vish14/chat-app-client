@@ -15,6 +15,7 @@ $font-color: #F2F2F2;
     // align-items: center;
     overflow-y: auto;
     position:relative;
+    z-index: 1;
     .join{
         position: fixed;
         bottom: 10px;
@@ -225,4 +226,7 @@ $font-color: #F2F2F2;
         transition: 0.4s;
         background: #252329;
     }
+}
+.modal-backdrop{
+    display: none;
 }

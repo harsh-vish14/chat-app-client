@@ -319,7 +319,7 @@ function Sidebar({ setCurrentChannel, usersId }) {
                         <div style={{ color: 'red', margin: '-10px 20px', display: channelPresent ? '' : 'none' }}>Invalid Channel ID</div>
                         <div className='buts'>
                             <div class="close" data-bs-dismiss="modal">Close</div>
-                            <div class="Add" style={{ cursor: 'pointer' }} data-bs-dismiss={channelPresent?"":"modal"} onClick={() => { checkChannel()}}>Save</div>
+                            <div class="Add" style={{ cursor: 'pointer' }} data-bs-dismiss={channelPresent?"modal":""} onClick={() => { checkChannel()}}>Save</div>
                         </div>
                     </div>
                 </div>

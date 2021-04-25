@@ -9,6 +9,7 @@
   background: #120F13;
   overflow-y: auto;
   position: relative;
+  z-index: 1;
 }
 
 .Chat-SideBar .join {
@@ -325,5 +326,9 @@
   -webkit-transition: 0.4s;
   transition: 0.4s;
   background: #252329;
+}
+
+.modal-backdrop {
+  display: none;
 }
 /*# sourceMappingURL=Sidebar.css.map */

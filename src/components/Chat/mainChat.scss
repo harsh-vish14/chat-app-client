@@ -14,7 +14,7 @@ $font-color: #F2F2F2;
     border-radius: 8px;
     cursor: pointer;
     display:none;
-    // z-index: -1;
+    z-index: 1;
 }
 @media only screen and (max-width: 400px){
     .menu-icon{
@@ -22,5 +22,6 @@ $font-color: #F2F2F2;
     }
     .chat-box{
         margin:0px 52px;
+        min-width: calc(100% - 44px);
     }
 }
