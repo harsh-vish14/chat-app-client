@@ -1,6 +1,6 @@
-# [Chat App](https://chat-app-hv.web.app/)
+# Chat App
 
-Chat app where multiple users can chat with each other and on live and for this, [socket.io](http://socket.io/) is used and for the frontend [React Js](https://reactjs.org/)
+[Chat app](https://chat-app-hv.web.app/) where multiple users can chat with each other and on live and for this, [socket.io](http://socket.io/) is used and for the frontend [React Js](https://reactjs.org/)
 
 ## Clone the Git repo
 
