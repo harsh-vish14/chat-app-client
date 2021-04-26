@@ -12,8 +12,8 @@ function App() {
     auth.onAuthStateChanged((userInfo) => {
       if (userInfo) {
         setUserLogin(true);
-        setLoading(false);
       }
+      setLoading(false);
     })
   }, []);
  
