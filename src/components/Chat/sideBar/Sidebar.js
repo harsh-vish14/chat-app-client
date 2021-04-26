@@ -43,7 +43,7 @@ function Sidebar({ setCurrentChannel, usersId }) {
                 db.collection('users').doc(userInfo.uid).get()
                     .then((snapshot) => {
                         var data = { ...snapshot.data() };
-                        // console.log(userInfo);
+                        // //(userInfo);
                         if (data.channels) {
                             const channelsIds = [...data.channels];
                             var channelsData = [];
@@ -63,7 +63,7 @@ function Sidebar({ setCurrentChannel, usersId }) {
                                             ]
                                         })
                                     });
-                                console.log(channelsData)
+                                //(channelsData)
                             }
                         } else {
                             setchannels([])
@@ -89,7 +89,7 @@ function Sidebar({ setCurrentChannel, usersId }) {
                await db.collection('users').doc(usersId[i]).get()
                     .then((snapshot) => {
                         const data = snapshot.data();
-                        console.log(data);
+                        //(data);
                         if (data) {
                             setUserInformation((preve) => {
                             return [
@@ -103,7 +103,7 @@ function Sidebar({ setCurrentChannel, usersId }) {
                         }
                     })
                     .catch((err) => {
-                        console.log(err);
+                        //(err);
                 })
             }
         }
@@ -123,8 +123,8 @@ function Sidebar({ setCurrentChannel, usersId }) {
         const id = uuid();
         const date = new Date();
         if (userChannelInput.title.length != 0) {
-            console.log(date.toLocaleTimeString());
-            console.log(date.toLocaleDateString());
+            //(date.toLocaleTimeString());
+            //(date.toLocaleDateString());
             await auth.onAuthStateChanged((userInfo) => {
                 if (userInfo) {
                     db.collection('users').doc(userInfo.uid).update({
@@ -167,7 +167,7 @@ function Sidebar({ setCurrentChannel, usersId }) {
                             }
                         ]
                     })
-                        console.log(snapshot.data());
+                        //(snapshot.data());
                         auth.onAuthStateChanged((userInfo) => {
                             if (userInfo) {
                                 db.collection('users').doc(userInfo.uid).update({
@@ -192,11 +192,11 @@ function Sidebar({ setCurrentChannel, usersId }) {
         }
     };
     const getChannelsData = async (channelid) => {
-        // console.log(channelid)
+        // //(channelid)
         await db.collection('channels').doc(channelid).get()
             .then((snapshot) => {
                 const data = snapshot.data();
-                console.log(snapshot)
+                //(snapshot)
                 setChannelsData({
                     id: snapshot.id,
                     title: data.title,
@@ -234,7 +234,7 @@ function Sidebar({ setCurrentChannel, usersId }) {
                                 <div>Add others using <br/> {ChannelsData.id}</div>
                             </div>
                         ) : (
-                            console.log('it is null')
+                            console.log('empty')
                         )}
                         {
                             userInformation.map((user) => {
@@ -288,39 +288,39 @@ function Sidebar({ setCurrentChannel, usersId }) {
                     </div>
                 )
             }
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    {/* {console.log(channels)} */}
-                    <div class="modal-content">
+            <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    {/* {//(channels)} */}
+                    <div className="modal-content">
                         <div className='title'>New Channel</div>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="abc...." onChange={handleChange} name='title' value={userChannelInput.title} />
-                            <label for="floatingInput">Channel name</label>
+                        <div className="form-floating mb-3">
+                            <input type="text" className="form-control" id="floatingInput" placeholder="abc...." onChange={handleChange} name='title' value={userChannelInput.title} />
+                            <label htmlFor="floatingInput">Channel name</label>
                         </div>
                         <div style={{ color: 'red', margin: '-10px 20px', display: nameThere ? 'none' : '' }}>Please Provide a Channel Name</div>
-                        <div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a description here" id="floatingTextarea2" style={{ height: "100px" }} name='description' onChange={handleChange} value={userChannelInput.description}></textarea>
-                            <label for="floatingTextarea2">Channel Description</label>
+                        <div className="form-floating">
+                            <textarea className="form-control" placeholder="Leave a description here" id="floatingTextarea2" style={{ height: "100px" }} name='description' onChange={handleChange} value={userChannelInput.description}></textarea>
+                            <label htmlFor="floatingTextarea2">Channel Description</label>
                         </div>
                         <div className='buts'>
-                            <div class="close" data-bs-dismiss="modal" onClick={() => { setUserChannelInput({ title: '', description: '' }) }}>Close</div>
-                            <div class="save" data-bs-dismiss="modal" onClick={() => { setUserChannelInput({ title: '', description: '' }); SaveChannel() }}>Save</div>
+                            <div className="close" data-bs-dismiss="modal" onClick={() => { setUserChannelInput({ title: '', description: '' }) }}>Close</div>
+                            <div className="save" data-bs-dismiss="modal" onClick={() => { setUserChannelInput({ title: '', description: '' }); SaveChannel() }}>Save</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
+            <div className="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
                         <div className='title'>Join Channel</div>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="abc-2ff...." name='id' onChange={(e)=>{setChannelsID(e.target.value)}} value={channelsID} />
-                            <label for="floatingInput">Channel ID</label>
+                        <div className="form-floating mb-3">
+                            <input type="text" className="form-control" id="floatingInput" placeholder="abc-2ff...." name='id' onChange={(e)=>{setChannelsID(e.target.value)}} value={channelsID} />
+                            <label htmlFor="floatingInput">Channel ID</label>
                         </div>
                         <div style={{ color: 'red', margin: '-10px 20px', display: channelPresent ? '' : 'none' }}>Invalid Channel ID</div>
                         <div className='buts'>
-                            <div class="close" data-bs-dismiss="modal">Close</div>
-                            <div class="Add" style={{ cursor: 'pointer' }} data-bs-dismiss={channelPresent?"modal":""} onClick={() => { checkChannel()}}>Save</div>
+                            <div className="close" data-bs-dismiss="modal">Close</div>
+                            <div className="Add" style={{ cursor: 'pointer' }} data-bs-dismiss={channelPresent?"modal":""} onClick={() => { checkChannel()}}>Save</div>
                         </div>
                     </div>
                 </div>

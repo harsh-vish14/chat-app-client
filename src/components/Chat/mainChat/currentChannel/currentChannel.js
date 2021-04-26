@@ -29,18 +29,21 @@ const CurrentChannel = ({ channelId }) => {
         db.collection('channels').doc(channelId).get()
             .then((snapshot) => {
                 const data = snapshot.data();
-                
-                data.chat.forEach(userChat => {
-                    setChatDetails((preve) => {
-                        return [
-                            ...preve,
-                            {
-                                name: userDetails(userChat.userId),
-                                ...userChat
-                            }
-                        ]
-                    })
+                if (data.chat) {
+                    data.chat.forEach(userChat => {
+                        setChatDetails((preve) => {
+                            return [
+                                ...preve,
+                                {
+                                    ...userChat
+                                }
+                            ]
+                        })
                 });
+                } else {
+                    setChatDetails([])
+                }
+                // setChatDetails();
                 setChannelData(data);
             })
         
@@ -48,28 +51,25 @@ const CurrentChannel = ({ channelId }) => {
 
     useEffect(() => {
         socket.on(`message-came-${channelId}`, (chatData) => {
-            db.collection('users').doc(chatData.userId).get()
-                .then((snapshot) => {
-                    var userData = snapshot.data()
-                    setChatDetails((preve) => {
-                        return [
-                            ...preve,
-                            {
-                                name: userData.name,
-                                ...chatData
-                            }
-                        ]
-                    })
+                setChatDetails((preve) => {
+                    return [
+                        ...preve,
+                        {
+                            ...chatData
+                        }
+                    ]
                 })
-        })
-    }, [channelId]);
-    const userDetails = (userid) => {
-        db.collection('users').doc(userid).get()
-            .then((snapshot) => {
-                var userData = snapshot.data()
-                return userData.name;
             })
-    };
+    }, [channelId]);
+    // const userDetails = (userid) => {
+    //     var name = ''
+    //     db.collection('users').doc(userid).get()
+    //         .then((snapshot) => {
+    //             var userData = snapshot.data()
+    //             name = userData.name;
+    //         })
+    //     return name
+    // };
     const sendMessage = () => {
         const date = new Date();
 
@@ -77,12 +77,14 @@ const CurrentChannel = ({ channelId }) => {
             channelId: channelId,
             chatDetails: {
                 userId: userID.uid,
+                name: userID.displayName,
                 date: date.toLocaleDateString(),
                 time: date.toLocaleTimeString(),
                 message: message
             }
         });
         setMessage('')
+        console.log(userID.displayName)
         setChatDetails((preve) => {
             return [
                 ...preve,
@@ -121,7 +123,7 @@ const CurrentChannel = ({ channelId }) => {
                                     
                                         chatdetails.map((chat, i) => {
                                             return (
-                                                <div key={i} className='chat-details' style={{ marginLeft: chat.userId == userID.uid ? ('auto') : ('') }}>
+                                                <div key={i} className='chat-details' style={chat.userId == userID.uid ? ({ marginLeft: 'auto',background:'#393e46'}) : ({ marginRight: 'auto',background:'black'})}>
                                                     <div className='chat-user'>
                                                         <div className='chat-user-name'>{chat.userId == userID.uid ? ("You") : (chat.name)}</div>
                                                     </div>

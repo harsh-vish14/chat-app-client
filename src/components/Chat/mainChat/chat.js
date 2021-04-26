@@ -5,7 +5,7 @@ import CurrentChannel from './currentChannel/currentChannel';
 import NoChatActive from './noChatActive/noChatActive';
 const Chat = ({ currentChannel,setUsersId }) => {
     useEffect( async () => {
-        console.log(currentChannel);
+        //(currentChannel);
         if (currentChannel) {
             await db.collection('channels').doc(currentChannel).get()
             .then((snapshot) => {

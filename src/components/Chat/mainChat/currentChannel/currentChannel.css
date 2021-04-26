@@ -46,7 +46,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #fff;
   border-radius: 10px;
   cursor: pointer;
@@ -132,7 +132,7 @@
 
 .chat-details .chat-time {
   position: absolute;
-  font-size: 11px;
+  font-size: 0.6875rem;
   margin-left: 20px;
   opacity: 0.7;
   bottom: 5px;
@@ -148,6 +148,6 @@
 }
 
 .chat-user .chat-user-name {
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 /*# sourceMappingURL=currentChannel.css.map */
