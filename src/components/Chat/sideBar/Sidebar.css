@@ -55,7 +55,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 14px;
+  font-size: 0.875rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -147,7 +147,7 @@
 }
 
 .side-bar-title .title {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
 }
 
@@ -159,7 +159,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 20px;
+  font-size: 1.25rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -192,7 +192,7 @@
 }
 
 .search-bar input {
-  font-size: 17.06px;
+  font-size: 1.0662rem;
   width: 100%;
   border: none;
   outline: none;

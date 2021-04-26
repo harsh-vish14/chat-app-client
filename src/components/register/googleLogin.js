@@ -6,7 +6,7 @@ const GoogleSignIn = ({setUserLogin}) => {
     const Google = () => {
         var user = GoogleLogin()
         if (user) {
-            console.log(user);
+            //(user);
             socket.emit('user-connected', user);
         }
     };

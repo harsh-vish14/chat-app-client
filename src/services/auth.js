@@ -6,7 +6,7 @@ const GoogleLogin = async () => {
             return res.user
         })
         .catch((err) => {
-            console.log(err);
+            //(err);
         })
 };
 

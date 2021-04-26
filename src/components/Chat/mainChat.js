@@ -13,7 +13,7 @@ const MainChat = () => {
         if (window.innerWidth > 400) {
             setShowSideBar(true);
         }
-        console.log(window.innerWidth)
+        //(window.innerWidth)
     }, [showSideBar]);
     return (
         <div style={{display: 'flex'}}>

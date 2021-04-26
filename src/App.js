@@ -2,47 +2,33 @@ import { useEffect, useState } from 'react';
 import MainChat from './components/Chat/mainChat';
 import GoogleLogin from './components/register/googleLogin';
 import { auth } from './firebase';
-import socket from './socket';
+import Loading from './loading/loading';
 // let socket
 function App() {
   const [userLogin, setUserLogin] = useState(false);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
+    setLoading(true);
     auth.onAuthStateChanged((userInfo) => {
       if (userInfo) {
         setUserLogin(true);
+        setLoading(false);
       }
     })
   }, []);
-  // const [player,setPlayer] = useState('')
-  // const [player2,setPlayer2] = useState('')
-  // useEffect(() => {
-  //   socket = io(ENDPOINT,connectionOptions);
-  //   socket.on('message-came-chat1', (message) => {
-  //     setPlayer(message);
-  //   })
-  //   socket.on('message-came-chat2', (message) => {
-  //     setPlayer2(message);
-  //   })
-  // },[])
-  // const sendMe1 = () => {
-  //   socket.emit('chat-input', {
-  //     id: 'chat1',
-  //     message: 'this is message for chat 1'
-  //   });
-  // };
-  // const sendMe2 = () => {
-  //   socket.emit('chat-input', {
-  //     id: 'chat2',
-  //     message: 'this is message for chat 3'
-  //   });
-  // };
+ 
   return (
     <div className="App">
       {
-        userLogin ? (
-          <MainChat />
-        ): (
-            <GoogleLogin setUserLogin={setUserLogin}/>
+        loading ? (
+          <Loading />
+        ) : (
+          userLogin ? (
+            <MainChat />
+          ) : (
+            <GoogleLogin setUserLogin={setUserLogin} />
+          )
+            
         )
       }
     </div>
