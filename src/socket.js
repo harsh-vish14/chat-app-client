@@ -1,5 +1,5 @@
 import io from 'socket.io-client';
-const ENDPOINT = 'http://localhost:4000';
+const ENDPOINT = process.env.REACT_APP_ENDPOINT;
 const connectionOptions = {
   "force new connection": true,
   "reconnectionAttempts": "Infinity",

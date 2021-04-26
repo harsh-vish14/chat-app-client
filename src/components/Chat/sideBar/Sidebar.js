@@ -80,9 +80,10 @@ function Sidebar({ setCurrentChannel, usersId }) {
                 
             }
         });
-    }, []);
+    }, [channelsID]);
 
-    useEffect( async () => {
+    useEffect(async () => {
+        setUserInformation([])
         if (usersId) {
             for (let i = 0; i < usersId.length; i++) {
                await db.collection('users').doc(usersId[i]).get()
@@ -106,7 +107,7 @@ function Sidebar({ setCurrentChannel, usersId }) {
                 })
             }
         }
-    }, [usersId]);
+    }, [usersId,channelsID]);
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;

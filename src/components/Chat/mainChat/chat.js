@@ -16,7 +16,7 @@ const Chat = ({ currentChannel,setUsersId }) => {
     },[currentChannel])
     return (
         <>
-            {/* <div onClick={() => { LogOut() }}>LogOut</div> */}
+
             {
                 currentChannel ? (
                     <>
